@@ -5,8 +5,9 @@ import 'angular-material/angular-material.css!';
 
 import routeConfig from './ui-router';
 import controller from './controller';
+import myLibrary from 'lib';
 
 angular
-    .module('myModule', ['ui.router', 'ngMaterial'])
+    .module('myModule', ['ui.router', 'ngMaterial', myLibrary.name])
     .config(routeConfig)
     .controller('Controller', controller);

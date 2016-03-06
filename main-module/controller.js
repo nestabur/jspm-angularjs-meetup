@@ -1,11 +1,11 @@
 class Controller {
 
-    constructor() {
-        this.message = 'The controller says HI!';
+    constructor(myService) {
+        this.message = myService.echo('The controller says HI!');
     }
 
 }
 
-Controller.$inject = [];
+Controller.$inject = ['myService'];
 
 export default Controller;
