@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+
+<head>
+    <title>AngularJS Zurich Meetup</title>
+</head>
+<body>
+
+<div ui-view></div>
+
+<script src="./jspm_packages/system.src.js"></script>
+<script>
+    System.config({
+        baseURL: '/'
+    });
+</script>
+<script src="./config.js"></script>
+<script>
+    System.import('index').catch(console.error.bind(console));
+</script>
+</body>
+</html>

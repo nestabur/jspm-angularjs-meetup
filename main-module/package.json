@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.1.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sync": "^0.1.4"
+  }
+}
