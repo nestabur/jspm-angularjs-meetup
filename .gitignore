@@ -1,2 +1,5 @@
 *.iml
 .idea
+**/build
+**/jspm_packages
+**/node_modules
