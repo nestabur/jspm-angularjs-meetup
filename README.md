@@ -4,36 +4,49 @@ This repository contains the code used for the AngularJS Zürich's meetup [Lazy 
 
 Below are the steps followed during the meetup.
 
-1. Run the example and open in your browser http://localhost:8088
+Prerrequisites:
+* node
+* gulp
+
+1. Run the example and open in your browser http://localhost:8088/index.html
 ``` 
+cd main-module
+npm install
 gulp
 ```
 2. Open the browser inspection (javascript console and network usage)
 > **console output:** all libraries missing, angular application cannot be loaded
-3. install dependencies
+3. install jspm and initialize main-module
 ```
-jspm install angular
-jspm install angular-material
-jspm install angular-ui-router
-jspm install css
-jspm install text
+npm install jspm
+jspm init (take all default values)
 ```
-4. link local dependency
+4. install dependencies
+```
+jspm install angular angular-material angular-ui-router css text npm:clean-css
+gulp
+```
+Reload your browser. You should see a nice message from the controller ;)
+5. link local dependency
     * switch to lib-module-integration branch
 ```
 git checkout lib-module-integration
 ```
     * register lib-module in local jspm registry (link) 
 ```
-cd lib-module
+cd ../lib-module
 jspm link github:lib-module
 ```
     * install lib-module in main-module
 ```
-cd main-module
+cd ../main-module
 jspm install github:lib-module --link
+gulp
 ```
-5. create the bundle
+Reload your browser. Now the message has been adapted by the lib-module library.
+6. create the bundle
 ```
 jspm bundle index.js bundle.js -minify --inject
+gulp
 ```
+Reload your browser and check the network, all your app is now bundled within a single javascript file!! (bundle.js)
