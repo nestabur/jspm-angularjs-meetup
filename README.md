@@ -9,25 +9,31 @@ Prerrequisites:
 * gulp
 
 1. Run the example and open in your browser http://localhost:8088/index.html    
+    
     ```
     cd main-module        
     npm install
     gulp
     ```
+    
 2. Open the browser inspection (javascript console and network usage)
     
     > **console output:** all libraries missing, angular application cannot be loaded
     
 3. install jspm and initialize main-module
+    
     ```
     npm install jspm
     jspm init (take all default values)
     ```
+    
 4. install dependencies
+    
     ```
     jspm install angular angular-material angular-ui-router css text npm:clean-css
     gulp
     ```
+    
     Reload your browser. You should see a nice message from the controller ;)
 5. link local dependency
     * switch to lib-module-integration branch
